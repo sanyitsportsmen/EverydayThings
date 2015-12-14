@@ -1,0 +1,133 @@
+.main-nav {
+  background-color: rgba(0,0,0,.65);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 50px 0 0 0;
+  width: 100%;
+  @media @tablet-small {
+    padding-top: 80px;
+  }
+  @media @mobile {
+    position: static;
+    width: auto;
+    padding: 20px 15px;
+    background-color: #4b0a0c;
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  ul li:hover {
+    background-color: #2b0306;
+    @media @mobile {
+      background: none;
+    }
+    & > ul {
+      display: block;
+    }
+  }
+  ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 125px;
+    position: relative;
+    @media @mobile {
+      width: auto;
+      display: block;
+      margin: 8px 10px;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    &:visited {
+      color: #fff;
+    }
+    &:hover {
+      background-color: #6d0911;
+      @media @mobile {
+        background-color: rgba(255,255,255,.2);
+      }
+    }
+  }
+  & > ul {
+    padding-left: 200px;
+    @media @tablet-small {
+      padding-left: 10px;
+    }
+    @media @mobile {
+      padding: 0;
+    }
+    & > li {
+      float: left;
+      @media @mobile {
+        float: none;
+        margin-top: 25px;
+      }
+      & > a {
+        width: auto;
+        padding: 10px 20px 15px 20px;
+        &[aria-haspopup="true"]:after {
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 4px solid #fff;
+          left: 20px;
+          right: auto;
+          bottom: 6px;
+          top: auto;
+        }
+      }
+    }
+  }
+  ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: #2b0306;
+    display: none;
+    @media @mobile {
+      background: none;
+    }
+    li {
+      position: relative;
+      a {
+        @media @mobile {
+          margin-left: 30px;
+        }
+      }
+    }
+    ul {
+      left: 100%;
+      top: 0px;
+      li a {
+        @media @mobile {
+          margin-left: 60px;
+        }
+      }
+    }
+  }
+  a[aria-haspopup="true"]:after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #fff;
+    @media @mobile {
+      display: none;
+    }
+  }
+  @media @mobile {
+    ul,
+    ul ul,
+    ul, ul, ul {
+      display: block;
+      position: static;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.main {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 0;
+  @media @tablet-small {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  aside {
+    width: 33%;
+    float: left;
+    text-align: center;
+    @media @mobile {
+      width: 100%;
+      float: none;
+      text-align: left;
+    }
+  }
+  .content {
+    margin: 15px;
+    background: no-repeat center top;
+    background-size: 75px 75px;
+    padding-top: 85px;
+    @media @tablet-small {
+      background-size: 55px 55px;
+      padding-top: 60px;
+    }
+    @media @mobile {
+      margin: 8px 20px 8px 0;
+      padding: 5px 0px 10px 85px;
+      background-size: 50px 50px;
+      background-position: 20px 5px;
+    }
+    &--trending {
+      background-image: url("../img/icon_star.svg");
+    }
+    &--find-it {
+      background-image: url("../img/icon_marker.svg");
+    }
+    &--tools {
+      background-image: url("../img/icon_gear.svg");
+    }
+    &__link {
+      color: #000;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

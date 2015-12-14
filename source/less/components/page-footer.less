@@ -1,0 +1,38 @@
+.page-footer {
+  font-size: .8em;
+  margin: 40px;
+  color: #999;
+  &:after {
+    @media @mobile-medium {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  .content {
+    display: inline;
+    @media @mobile {
+      display: block;
+      margin-top: 15px;
+    }
+    &__link {
+      margin-left: 30px;
+      color: #777;
+      @media @mobile {
+        margin: 0 20px 0 0;
+      }
+      @media @mobile-medium {
+        display: inline-block;
+        margin: 0 0 10px 0;
+        float: left;
+        clear: both;
+      }
+      &:visited {
+        color: #777;
+      }
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
