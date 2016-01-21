@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             options: {
-                browsers: ["last 2 version", "ie 9"]
+                browsers: ["last 2 version", "ie 10"]
             },
             style: {
                 src: "build/css/style.css"
@@ -21,6 +21,13 @@ module.exports = function(grunt) {
             target: {
                 files: {
                     'build/css/style.min.css': ['build/css/style.css']
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'build/js/script.min.js': ['source/js/script.js']
                 }
             }
         },
@@ -53,9 +60,13 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['*.html']
+            },
+            js: {
+                files: ['source/js/*.js'],
+                tasks: ['uglify']
             }
         }
     });
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build:production', ['less', 'autoprefixer', 'cssmin', 'copy', 'htmlmin']);
+    grunt.registerTask('build:production', ['less', 'autoprefixer', 'cssmin', 'uglify', 'copy', 'htmlmin']);
 }

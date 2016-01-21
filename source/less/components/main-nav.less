@@ -9,10 +9,7 @@
     padding-top: 80px;
   }
   @media @mobile {
-    position: static;
-    width: auto;
-    padding: 20px 15px;
-    background-color: #4b0a0c;
+    display: none;
   }
   &:after {
     content: '';
@@ -128,6 +125,16 @@
     ul, ul, ul {
       display: block;
       position: static;
+    }
+  }
+  &__toggle {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    padding: 60px 15px;
+    background-color: #4b0a0c;
+    @media @mobile-medium {
+      padding: 20px 15px;
     }
   }
 }
