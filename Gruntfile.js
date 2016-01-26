@@ -31,6 +31,17 @@ module.exports = function(grunt) {
                 }
             }
         },
+        imagemin: {
+          images: {
+            options: {
+              optimizationLevel: 3
+            },
+            files: [{
+              expand: true,
+              src: ["source/img/*.{png,jpg,gif,svg}"]
+            }]
+          }
+        },
         copy: {
             main: {
                 files: [
@@ -68,5 +79,5 @@ module.exports = function(grunt) {
         }
     });
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build:production', ['less', 'autoprefixer', 'cssmin', 'uglify', 'copy', 'htmlmin']);
+    grunt.registerTask('build:production', ['less', 'autoprefixer', 'cssmin', 'uglify', 'imagemin', 'copy', 'htmlmin']);
 }
