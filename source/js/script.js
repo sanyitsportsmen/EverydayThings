@@ -1,5 +1,6 @@
 (function($) {
   var nav = $('.main-nav');
+  $(".loader").css('display', 'block');
   $(window).load(function() {
     $(".loader__inner").fadeOut();
     $(".loader").delay(400).fadeOut("slow");
