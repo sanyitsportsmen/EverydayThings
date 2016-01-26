@@ -38,7 +38,7 @@ module.exports = function(grunt) {
             },
             files: [{
               expand: true,
-              src: ["source/img/*.{png,jpg,gif,svg}"]
+              src: ["build/img/*.{png,jpg,gif,svg}"]
             }]
           }
         },
@@ -46,6 +46,7 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     {expand: true, cwd: 'source/img/', src: ['**'], dest: 'build/img/'},
+                    {expand: true, cwd: 'source/js/libs', src: ['**'], dest: 'build/js/libs'}
                 ],
             },
         },
@@ -79,5 +80,5 @@ module.exports = function(grunt) {
         }
     });
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build:production', ['less', 'autoprefixer', 'cssmin', 'uglify', 'imagemin', 'copy', 'htmlmin']);
+    grunt.registerTask('build:production', ['less', 'autoprefixer', 'cssmin', 'uglify', 'copy', 'imagemin', 'htmlmin']);
 }
